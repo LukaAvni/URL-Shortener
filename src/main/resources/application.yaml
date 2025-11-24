@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: urlshortener
+  datasource:
+    url: jdbc:postgresql://ep-floral-surf-ahjjnbzd-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+    username: neondb_owner
+    password: npg_49UiyOZctnxT
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080

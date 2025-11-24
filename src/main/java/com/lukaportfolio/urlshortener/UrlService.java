@@ -1,6 +1,9 @@
 package com.lukaportfolio.urlshortener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
 import java.util.Random;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +32,13 @@ public class UrlService {
                     urlRepository.save(newUrl); // Save to DB
                     return code;
                 });
+    }
+
+    public String decode(String code) {
+        return urlRepository.findByShortCode(code)
+                .map(Url::getLongUrl)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "Error 404: Not Found"
+                ));
     }
 }

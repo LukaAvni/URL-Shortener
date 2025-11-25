@@ -27,7 +27,7 @@ public class Controller {
     @GetMapping("/retrieve")
     public ShortUrlResponse shorten(@RequestParam String longUrl) {
         String code = urlService.encode(longUrl);
-        String fullUrl = "https://template.com/r/" + code;
+        String fullUrl = "https://url-shortener-0j28.onrender.com/r/" + code;
         return new ShortUrlResponse(fullUrl);
     }
 

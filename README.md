@@ -19,7 +19,7 @@ This is a simple REST API for shortening URLs. It converts a long URL into a sho
 import requests
 
 resp = requests.get(
-    "https://yourapp.com/retrieve", 
+    "https://url-shortener-0j28.onrender.com/retrieve", 
     params={"longUrl": "https://youtube.com"}
 )
 
@@ -30,7 +30,7 @@ This will return a JSON object with a link in the format:
 
 ```JSON
 {
-    "shortUrl": "https://yourapp.com/r/33594"
+    "shortUrl": "https://url-shortener-0j28.onrender.com/r/33594"
 }
 ```
 
